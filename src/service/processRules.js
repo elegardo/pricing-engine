@@ -17,11 +17,10 @@ const processResult = (results) => {
   if (results.events.length > 0) {
     results.events.map((event) => {
       response.push({
+        action: event.params.action,
         message: event.params.message,
       })
     })
-  } else {
-    response.push({ message: 'Not match' })
   }
   return response
 }

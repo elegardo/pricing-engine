@@ -7,6 +7,7 @@ export const postProcessSchema = {
       404: {
         type: 'object',
         properties: {
+          action: { type: 'string' },
           message: { type: 'string' },
         },
       },

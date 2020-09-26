@@ -20,7 +20,7 @@ exports.seed = function (knex) {
                   {
                     fact: 'price',
                     operator: 'lessThanXPercentThanCompetitor',
-                    value: '15',
+                    value: '5',
                   },
                 ],
               },
@@ -29,8 +29,9 @@ exports.seed = function (knex) {
           event: {
             type: 'event',
             params: {
+              action: 'increase',
               message:
-                'Ups !! estas al menos un 15% bajo la competencia, estas seguro de este precio ?  ;)',
+                'Ups !! estas al menos un 5% bajo la competencia, estas seguro de este precio ?  ;)',
             },
           },
           created_at: new Date(),
@@ -47,7 +48,7 @@ exports.seed = function (knex) {
                   {
                     fact: 'price',
                     operator: 'greaterThanXPercentThanCompetitor',
-                    value: '15',
+                    value: '5',
                   },
                 ],
               },
@@ -56,8 +57,9 @@ exports.seed = function (knex) {
           event: {
             type: 'event',
             params: {
+              action: 'decrease',
               message:
-                'Cuidado !! baja un poquito tu precio, estas sobre el 15% que tu competencia',
+                'Cuidado !! baja un poquito tu precio, estas sobre el 5% que tu competencia',
             },
           },
           created_at: new Date(),
@@ -74,7 +76,7 @@ exports.seed = function (knex) {
                   {
                     fact: 'price',
                     operator: 'betweenXPercentThanCompetitor',
-                    value: '15',
+                    value: '5',
                   },
                 ],
               },
@@ -83,8 +85,9 @@ exports.seed = function (knex) {
           event: {
             type: 'event',
             params: {
+              action: 'keep',
               message:
-                'Excelente !! tu precio esta en un rango de 15% en comparacion a tu competencia, <3 !!',
+                'Excelente !! tu precio esta en un rango de 5% en comparacion a tu competencia, <3 !!',
             },
           },
           created_at: new Date(),
@@ -110,6 +113,7 @@ exports.seed = function (knex) {
           event: {
             type: 'event',
             params: {
+              action: 'keep',
               message:
                 'Ojo !! tu precio es el mismo que la competencia, si bajas un poco el precio seras un champion !!',
             },

@@ -45,5 +45,6 @@ describe('postProcessHandler', () => {
       data: mockRequest.body,
     })
     expect(mockReply.code).toHaveBeenCalledWith(200)
+    expect(mockReply.send).toHaveBeenCalledWith({ suggestions: someResult })
   })
 })

@@ -11,7 +11,7 @@ export const postProcessHandler = async (request, reply) => {
 
   const rules = await getAllRules()
 
-  const response = await processRules({ rules, data })
+  const results = await processRules({ rules, data })
 
-  reply.code(200).send(response)
+  reply.code(200).send({ suggestions: results })
 }
