@@ -7,7 +7,7 @@ const schemaResponse = {
   },
 }
 
-export const postRulesSchema = {
+export const postNewRuleSchema = {
   schema: {
     response: {
       200: {

@@ -3,7 +3,7 @@
 
 import { saveRule } from '../../../repository'
 
-export const postRulesHandler = async (request, reply) => {
+export const postNewRuleHandler = async (request, reply) => {
   const data = {
     ...request.body,
   }

@@ -2,7 +2,7 @@
 'use strict'
 
 import { postProcessRoute } from './process/postProcessRoute'
-import { postRulesRoute } from './rules/postNewRule/postRulesRoute'
+import { postNewRuleRoute } from './rules/postNewRule/postNewRuleRoute'
 import { getAllRulesRoute } from './rules/getAllRules/getAllRulesRoute'
 import { getRuleByIdRoute } from './rules/getRuleById/getRuleByIdRoute'
 
@@ -12,7 +12,7 @@ export const api = async (fastify) => {
   fastify.register((fastify) => postProcessRoute(fastify), {
     prefix: API_VERSION,
   })
-  fastify.register((fastify) => postRulesRoute(fastify), {
+  fastify.register((fastify) => postNewRuleRoute(fastify), {
     prefix: API_VERSION,
   })
   fastify.register((fastify) => getAllRulesRoute(fastify), {
