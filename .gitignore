@@ -1,0 +1,17 @@
+node_modules
+.nyc_output
+tmp
+coverage
+docs
+.env
+.npmrc
+.idea
+.vscode
+.env
+credentials/*
+temp/*
+!temp/attributes_event.js
+gcp.json
+.DS_Store
+.talismanrc
+dist/*
