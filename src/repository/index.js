@@ -2,10 +2,11 @@
 
 import Knex from 'knex'
 import databaseConfiguration from '../configuration/databaseConfiguration'
-import { createDBClient } from './createDBClient'
 import { saveRule } from './saveRule'
 import { getAllRules } from './getAllRules'
 import { getRuleById } from './getRuleById'
+
+const createDBClient = ({ knex, configuration }) => knex(configuration)
 
 const dbClient = createDBClient({
   knex: Knex,
