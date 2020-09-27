@@ -54,6 +54,22 @@ npm run seed
 
 * all demo rules [here](./seeds/01_rules.js)
 
+
+### Code Quality
+
+run unit tests
+
+```console
+npm run test:unit
+```
+
+run linter
+
+```console
+npm run lint
+```
+
+
 ### Run Server
 
 ```console

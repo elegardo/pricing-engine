@@ -15,6 +15,7 @@ const start = async () => {
     const server = create()
     await server.listen(3000, '0.0.0.0')
   } catch (err) {
+    // eslint-disable-next-line no-console
     console.log(err)
     process.exit(1)
   }

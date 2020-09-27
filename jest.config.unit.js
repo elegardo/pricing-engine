@@ -7,12 +7,7 @@ module.exports = {
   testPathIgnorePatterns: ['<rootDir>/src/integration-test'],
   setupFiles: ['jest-date-mock'],
   moduleFileExtensions: ['js', 'json', 'node'],
-  collectCoverageFrom: [
-    '**/*.{ts,js}',
-    '!**/node_modules/**',
-    '!**/index.js',
-    '!**/integration-test/**',
-  ],
+  collectCoverageFrom: ['**/*.{ts,js}', '!**/node_modules/**', '!**/index.js'],
   coverageThreshold: {
     global: {
       statements: 94,
