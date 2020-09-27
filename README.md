@@ -60,7 +60,7 @@ npm run seed
 npm start
 ```
 
-## API Using
+## API /process
 
 POST
 ```console
@@ -97,5 +97,56 @@ RESPONSE example
             "message": "Cuidado !! baja un poquito tu precio, estas sobre el 5% que tu competencia"
         }
     ]
+}
+```
+
+## API /rules
+
+
+In order retrieve all rules
+
+GET
+```console
+127.0.0.1:3000/v1/rules
+```
+
+Retrieve rule by id
+
+GET
+```console
+127.0.0.1:3000/v1/rules/:id
+```
+
+Save a new rule
+
+POST
+```console
+127.0.0.1:3000/v1/rules
+```
+
+PAYLOAD example
+```javascript
+{
+    "name": "ruleSample10",
+    "description": "description rule",
+    "conditions": {
+        "all": [
+            {
+                "all": [
+                    {
+                        "fact": "price",
+                        "operator": "lessThanXPercentThanCompetitor",
+                        "value": "15"
+                    }
+                ]
+            }
+        ]
+    },
+    "event": {
+        "type": "event",
+        "params": {
+            "message": "Ups !! estas al menos un 15% bajo la competencia, estas seguro de este precio ?  ;)"
+        }
+    }
 }
 ```
