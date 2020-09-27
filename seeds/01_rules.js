@@ -149,7 +149,7 @@ exports.seed = function (knex) {
           id: v4(),
           name: 'ruleSample5',
           description:
-            'Evalua que el stock en todos los competidores es igual a cero',
+            'Evalua que el stock promedio de los competidores es igual a cero',
           conditions: {
             all: [
               {

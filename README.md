@@ -150,3 +150,54 @@ PAYLOAD example
     }
 }
 ```
+
+### Rules
+
+### Operators
+Operadores por defecto del engine de reglas [json-rules-engine](https://github.com/CacheControl/json-rules-engine), permite evaluar datos nativos:
+
+* equal
+* notEqual
+* in
+* notIn
+* contains
+* doesNotContain
+* lessThan
+* lessThanInclusive
+* greaterThan
+* greaterThanInclusive
+
+### Custom operators
+Operadores personalizados que evaluan distintas reglas de negocio. Para su ejecucion es necesario enviar el siguiente formato en el payload:
+
+```javascript
+{
+    "sku": "1",
+    "category": "1",
+    "competitorStock": [
+            100,
+            0,
+            0
+        ],
+    "price": {
+        "currentPrice": 900,
+        "competitorPrice": [
+            800,
+            800,
+            800
+        ]
+    }
+}
+```
+
+* **lessThanXPercentThanCompetitor**: Evalua que el precio no este un X% bajo el promedio de precios de los competidores
+
+* **greaterThanXPercentThanCompetitor**: Evalua que el precio no este un X% sobre el promedio de precios de los competidores
+
+* **betweenXPercentThanCompetitor**: Evalua que el precio este en un rango de X% bajo o sobre el promedio de precios de los competidores
+
+* **equalToXPrice**: Evalua que el precio sea igual al X precio promedio de precios de los competidores
+
+* **equalToXStock**: Evalua que el stock promedio de los competidores es igual a X
+ 
+* **notEqualToXStock**: Evalua que el stock promedio de los competidores NO es igual a X
