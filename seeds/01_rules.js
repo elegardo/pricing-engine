@@ -12,7 +12,8 @@ exports.seed = function (knex) {
         {
           id: v4(),
           name: 'ruleSample1',
-          description: 'description rule',
+          description:
+            'Evalua que el precio no este un 5% bajo el promedio de precios de los competidores (y stock != 0)',
           conditions: {
             all: [
               {
@@ -36,7 +37,7 @@ exports.seed = function (knex) {
             params: {
               action: 'increase',
               message:
-                'Ups !! estas al menos un 5% bajo la competencia, estas seguro de este precio ?  ;)',
+                'Ups !! estas al menos un 5% bajo el precio promedio de tu competencia, estas seguro de este precio ?  ;)',
             },
           },
           created_at: new Date(),
@@ -45,7 +46,8 @@ exports.seed = function (knex) {
         {
           id: v4(),
           name: 'ruleSample2',
-          description: 'description rule',
+          description:
+            'Evalua que el precio no este un 5% sobre el promedio de precios de los competidores (y stock != 0)',
           conditions: {
             all: [
               {
@@ -69,7 +71,7 @@ exports.seed = function (knex) {
             params: {
               action: 'decrease',
               message:
-                'Cuidado !! baja un poquito tu precio, estas sobre el 5% que tu competencia',
+                'Cuidado !! estas sobre el 5% que el precio promedio de tu competencia, baja un poco tu precio y seguiras siendo competitivo',
             },
           },
           created_at: new Date(),
@@ -78,7 +80,8 @@ exports.seed = function (knex) {
         {
           id: v4(),
           name: 'ruleSample3',
-          description: 'description rule',
+          description:
+            'Evalua que el precio este en un rango de 5% bajo o sobre el promedio de precios de los competidores (y stock != 0)',
           conditions: {
             all: [
               {
@@ -111,7 +114,8 @@ exports.seed = function (knex) {
         {
           id: v4(),
           name: 'ruleSample4',
-          description: 'description rule',
+          description:
+            'Evalua que el precio sea igual al precio promedio de precios de los competidores (y stock != 0)',
           conditions: {
             all: [
               {
@@ -133,9 +137,9 @@ exports.seed = function (knex) {
           event: {
             type: 'event',
             params: {
-              action: 'keep',
+              action: 'decrease',
               message:
-                'Ojo !! tu precio es el mismo que la competencia, si bajas un poco el precio seras un champion !!',
+                'Ojo !! tu precio es el mismo que la competencia, si bajas un poco el precio podras destacarte !!',
             },
           },
           created_at: new Date(),
@@ -144,7 +148,8 @@ exports.seed = function (knex) {
         {
           id: v4(),
           name: 'ruleSample5',
-          description: 'description rule',
+          description:
+            'Evalua que el stock en todos los competidores es igual a cero',
           conditions: {
             all: [
               {

@@ -52,8 +52,50 @@ populate with demo data
 npm run seed
 ```
 
+* all demo rules [here](./seeds/01_rules.js)
+
 ### Run Server
 
 ```console
 npm start
+```
+
+## API Using
+
+POST
+```console
+127.0.0.1:3000/v1/process
+```
+
+PAYLOAD example
+```javascript
+{
+    "sku": "1",
+    "category": "1",
+    "competitorStock": [
+            100,
+            0,
+            0
+        ],
+    "price": {
+        "currentPrice": 900,
+        "competitorPrice": [
+            800,
+            800,
+            800
+        ]
+    }
+}
+```
+
+RESPONSE example
+```javascript
+{
+    "suggestions": [
+        {
+            "action": "decrease",
+            "message": "Cuidado !! baja un poquito tu precio, estas sobre el 5% que tu competencia"
+        }
+    ]
+}
 ```
