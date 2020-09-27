@@ -4,6 +4,7 @@ import { Engine } from 'json-rules-engine'
 import { getPricingEngine } from '../getPricingEngine'
 
 jest.mock('json-rules-engine')
+jest.mock('../customOperators')
 
 const addOperatorMock = jest.fn()
 Engine.mockImplementation(() => {
