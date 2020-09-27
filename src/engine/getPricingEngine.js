@@ -6,6 +6,7 @@ import {
   greaterThanXPercentThanCompetitor,
   betweenXPercentThanCompetitor,
   equalToXPrice,
+  equalToXStock,
 } from './customOperators'
 
 export const getPricingEngine = () => {
@@ -24,6 +25,9 @@ export const getPricingEngine = () => {
   )
   engine.addOperator('equalToXPrice', (factValue, jsonValue) =>
     equalToXPrice(factValue, jsonValue),
+  )
+  engine.addOperator('equalToXStock', (factValue, jsonValue) =>
+    equalToXStock(factValue, jsonValue),
   )
 
   return engine

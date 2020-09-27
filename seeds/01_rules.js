@@ -121,6 +121,34 @@ exports.seed = function (knex) {
           created_at: new Date(),
           is_active: true,
         },
+        {
+          id: v4(),
+          name: 'ruleSample5',
+          description: 'description rule',
+          conditions: {
+            all: [
+              {
+                all: [
+                  {
+                    fact: 'competitorStock',
+                    operator: 'equalToXStock',
+                    value: '0',
+                  },
+                ],
+              },
+            ],
+          },
+          event: {
+            type: 'event',
+            params: {
+              action: 'increase',
+              message:
+                'Es tu oportunidad !! la competencia no tiene stock, puedes subir tu precio y obtener un buen margen',
+            },
+          },
+          created_at: new Date(),
+          is_active: true,
+        },
       ])
     })
 }

@@ -5,6 +5,11 @@ const averagePriceCalculation = (competitors) => {
   return average(competitors)
 }
 
+const amountStockCalculation = (stocks) => {
+  const amount = (array) => array.reduce((a, b) => a + b)
+  return amount(stocks)
+}
+
 export const lessThanXPercentThanCompetitor = (factValue, jsonValue) => {
   const { currentPrice, competitorPrice } = factValue
   const average = averagePriceCalculation(competitorPrice)
@@ -35,4 +40,9 @@ export const equalToXPrice = (factValue, jsonValue) => {
     xPrice = factValue[jsonValue]
   }
   return currentPrice === xPrice
+}
+
+export const equalToXStock = (factValue, jsonValue) => {
+  const amount = amountStockCalculation(factValue)
+  return amount == jsonValue
 }
