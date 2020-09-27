@@ -20,7 +20,7 @@ describe('getPricingEngine', () => {
   it('should return a PriceEngine', () => {
     getPricingEngine()
 
-    expect(addOperatorMock).toHaveBeenCalledTimes(5)
+    expect(addOperatorMock).toHaveBeenCalledTimes(6)
     expect(addOperatorMock).toHaveBeenNthCalledWith(
       1,
       'lessThanXPercentThanCompetitor',
@@ -44,6 +44,11 @@ describe('getPricingEngine', () => {
     expect(addOperatorMock).toHaveBeenNthCalledWith(
       5,
       'equalToXStock',
+      expect.any(Function),
+    )
+    expect(addOperatorMock).toHaveBeenNthCalledWith(
+      6,
+      'notEqualToXStock',
       expect.any(Function),
     )
   })

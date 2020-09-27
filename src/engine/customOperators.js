@@ -46,3 +46,8 @@ export const equalToXStock = (factValue, jsonValue) => {
   const amount = amountStockCalculation(factValue)
   return amount == jsonValue
 }
+
+export const notEqualToXStock = (factValue, jsonValue) => {
+  const amount = amountStockCalculation(factValue)
+  return amount != jsonValue
+}
