@@ -106,4 +106,27 @@ describe('processRules', () => {
       },
     ])
   })
+
+  it('should return empty array when rules do not trigger', async () => {
+    const mockEngineResult = {
+      events: [],
+    }
+    const mockData = {
+      sku: '1',
+      category: '1',
+      competitorStock: [800, 0, 0],
+      price: {
+        currentPrice: 900,
+        competitorPrice: [800, 800, 800],
+      },
+    }
+    runMock.mockResolvedValue(mockEngineResult)
+
+    const results = await process({ rules: mockRules, data: mockData })
+
+    expect(addRuleMock).toHaveBeenCalledTimes(2)
+    expect(addRuleMock).toHaveBeenNthCalledWith(1, mockRules[0])
+    expect(addRuleMock).toHaveBeenNthCalledWith(2, mockRules[1])
+    expect(results).toEqual([])
+  })
 })
